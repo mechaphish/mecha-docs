@@ -57,3 +57,15 @@ Scripts and such for the CGC
 
 ## [afl-other-arch](https://git.seclab.cs.ucsb.edu/cgc/afl-other-arch.git)
 Easy other architecture support for AFL
+
+## [Driller-AFL](driller-afl.git)
+Driller's custom AFL
+
+## [AFL](https://git.seclab.cs.ucsb.edu/cgc/afl.git)
+American Fuzzy Lop http://lcamtuf.coredump.cx/afl/
+
+## [Tester](https://git.seclab.cs.ucsb.edu/cgc/tester.git)
+CGC binary tester for qualification
+
+## [CB Analyses](https://git.seclab.cs.ucsb.edu/cgc/cb_analyses.git)
+CB analyses so that we can be more informed in developing the CRS
