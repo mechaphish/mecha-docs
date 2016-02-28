@@ -16,8 +16,16 @@ git clone git@git.seclab.cs.ucsb.edu:cgc/meister.git
 pip install -e common
 pip install -e farnsworth-client
 
-# run Farnsworth
+# install Postgres
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ trusty-pgdg main" >> /etc/apt/sources.list.d/postgresql.list'
 sudo apt-get install postgresql-9.5
+
+# connecto to VPN
+# ask Yan for VPN scripts
+cd team6/ && sudo openvpn team6-tcp-client.ovpn
+
+# run Farnsworth
 cd farnsworth
 cp .env.development .env
 psql < support/database/schema.sql
