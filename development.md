@@ -7,11 +7,13 @@ Run CRS manually without Kubernetes.
 You need to customize .env file to match your setup.
 
 ```
+git clone git@git.seclab.cs.ucsb.edu:cgc/common.git
 git clone git@git.seclab.cs.ucsb.edu:cgc/farnsworth-client.git
 git clone git@git.seclab.cs.ucsb.edu:cgc/farnsworth.git
 git clone git@git.seclab.cs.ucsb.edu:cgc/worker.git
 git clone git@git.seclab.cs.ucsb.edu:cgc/meister.git
 
+pip install -e common
 pip install -e farnsworth-client
 
 # run Farnsworth
