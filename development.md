@@ -34,7 +34,7 @@ cd team6/ && sudo openvpn team6-tcp-client.ovpn
 cd farnsworth
 cp .env.development .env
 # edit .env
-psql < support/database/schema.sql
+psql -U postgres < support/database/schema.sql
 pip install -e .
 python develop.py
 
