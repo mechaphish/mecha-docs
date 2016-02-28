@@ -7,3 +7,4 @@ documentation provided by the organizers.
 * [CRS overview](crs-overview.md)
 * [CGC Cloud Hardware](hardware.md)
 * [Repositories list](repositories.md)
+* [Development setup](development.md)
