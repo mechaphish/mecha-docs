@@ -21,8 +21,11 @@ pip install -e farnsworth-client
 wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
 sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ trusty-pgdg main" >> /etc/apt/sources.list.d/postgresql.list'
 sudo apt-get update && sudo apt-get install postgresql-9.5 postgresql-server-dev-9.5
-# put this line in /etc/postgresql/9.5/main/pg_hba.conf
+# put these lines in /etc/postgresql/9.5/main/pg_hba.conf
+local   all             all                                     trust
 host    all             all             127.0.0.1/32            trust
+
+sudo service postgresql restart
 
 # connecto to VPN (ask Yan for VPN scripts)
 cd team6/ && sudo openvpn team6-tcp-client.ovpn
