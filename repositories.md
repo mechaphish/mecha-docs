@@ -10,12 +10,6 @@ Shellphish CRS worker component
 Farnsworth is the knowledge base of the Shellphish CRS.
 It provides a JSON-based REST API and uses PostgreSQL as the data store.
 
-## [Farnsworth-client](https://git.seclab.cs.ucsb.edu/cgc/farnsworth-client.git)
-Models for accessing Farnsworth API
-
-## [Common](https://git.seclab.cs.ucsb.edu/cgc/common.git)
-Shared code for the Shellphish CRS
-
 ## [Vagrant-Utils](https://git.seclab.cs.ucsb.edu/cgc/vagrant-utils.git)
 Utilities to communicate with CGC Vagrant VM
 

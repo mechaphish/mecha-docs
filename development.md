@@ -1,54 +1,50 @@
 # Development setup
 
-## Locally
+How to run CRS manually without Kubernetes.
 
-Run CRS manually without Kubernetes.
+## Requirements
 
-You need to customize .env file to match your setup.
+* angr
+* docker
+
+
+## Install
 
 ```
-git clone git@git.seclab.cs.ucsb.edu:cgc/cbs.git
-git clone git@git.seclab.cs.ucsb.edu:cgc/common.git
-git clone git@git.seclab.cs.ucsb.edu:cgc/farnsworth-client.git
-git clone git@git.seclab.cs.ucsb.edu:cgc/farnsworth.git
-git clone git@git.seclab.cs.ucsb.edu:cgc/worker.git
-git clone git@git.seclab.cs.ucsb.edu:cgc/meister.git
+git clone git@git.seclab.cs.ucsb.edu:cgc/cbs.git && \
+git clone git@git.seclab.cs.ucsb.edu:cgc/farnsworth.git && \
+git clone git@git.seclab.cs.ucsb.edu:cgc/worker.git && \
+git clone git@git.seclab.cs.ucsb.edu:cgc/meister.git && \
+pip install -e farnsworth && \
+pip install -e worker && \
+pip install -e meister
 
-pip install -e common
-pip install -e farnsworth-client
-
-# install Postgres
-wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
-sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ trusty-pgdg main" >> /etc/apt/sources.list.d/postgresql.list'
-sudo apt-get update && sudo apt-get install postgresql-9.5 postgresql-server-dev-9.5
-# put these lines in /etc/postgresql/9.5/main/pg_hba.conf
-local   all             all                                     trust
-host    all             all             127.0.0.1/32            trust
-
-sudo service postgresql restart
-
-# connecto to VPN (ask Yan for VPN scripts)
-cd team6/ && sudo openvpn team6-tcp-client.ovpn
-
-# run Farnsworth
+# setup db
 cd farnsworth
-cp .env.development .env
-# edit .env
-psql -U postgres < support/database/schema.sql
-pip install -e .
-python develop.py
+cp .env.example .env
+# edit .env if needed
+./setupdb.sh
+```
+
+
+## Run
+
+```
+# run Postgres
+sudo docker run -p 127.0.0.1:5432:5432 -d postgres:9.5
+
+# connecto to VPN for virtual-competition (ask Yan for VPN scripts)
+cd team6/ && sudo openvpn team6-tcp-client.ovpn
 
 # run Meister
 cd meister
-pip install -e .
 cp .env.development .env
-# edit .env
+# edit .env if needed
 meister
 
 # run worker
 cd worker
-pip install -e .
 cp .env.development .env
-# edit .env
+# edit .env if needed
 JOB_ID=xxx worker
 ```
