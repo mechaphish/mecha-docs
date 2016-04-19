@@ -5,7 +5,7 @@ How to run CRS manually without Kubernetes.
 ## Requirements
 
 * angr
-* docker
+* docker (`curl -fsSL https://get.docker.com/ | sh`)
 
 
 ## Install
