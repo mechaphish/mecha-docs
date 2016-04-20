@@ -55,7 +55,7 @@ JOB_ID=xxx worker
 You can use the virtual competition running on CGC node `172.16.7.19:8888`.
 If you want to run virtual competition locally:
 
-1. install (VirtualBox)[https://www.virtualbox.org/wiki/Downloads] and (Vagrant)[https://www.vagrantup.com/downloads.html]
+1. install [VirtualBox](https://www.virtualbox.org/wiki/Downloads) and [Vagrant](https://www.vagrantup.com/downloads.html)
 2. run
 
    ```
