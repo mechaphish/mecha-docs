@@ -1,6 +1,6 @@
 # Development setup
 
-How to run CRS manually without Kubernetes.
+How to run CRS locally (without Kubernetes).
 
 ## Requirements
 
@@ -48,3 +48,20 @@ cp .env.development .env
 # edit .env if needed
 JOB_ID=xxx worker
 ```
+
+
+## Run Virtual Competition
+
+You can use the virtual competition running on CGC node `172.16.7.19:8888`.
+If you want to run virtual competition locally:
+
+1. install (VirtualBox)[https://www.virtualbox.org/wiki/Downloads] and (Vagrant)[https://www.vagrantup.com/downloads.html]
+2. run
+
+   ```
+   git clone git@git.seclab.cs.ucsb.edu:cgc/virtual-competition.git && \
+   git clone git@git.seclab.cs.ucsb.edu:cgc/tester.git && \
+   cd virtual-competition && \
+   vagrant up && \
+   vagrant ssh ti -c "/vagrant/bin/launch start"
+   ```
