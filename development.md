@@ -4,7 +4,7 @@ How to run CRS locally (without Kubernetes).
 
 ## Requirements
 
-* angr
+* Python 2.7 with virtualenv
 * docker (`curl -fsSL https://get.docker.com/ | sh`)
 * openvpn (`sudo apt-get install openvpn`)
 
@@ -12,10 +12,19 @@ How to run CRS locally (without Kubernetes).
 ## Install
 
 ```
+mkvirtualenv cgc
+workon cgc
+
+git clone git@git.seclab.cs.ucsb.edu:cgc/fuzzer.git && \
+git clone git@git.seclab.cs.ucsb.edu:cgc/rex.git && \
+git clone git@git.seclab.cs.ucsb.edu:cgc/patcherex.git && \
 git clone git@git.seclab.cs.ucsb.edu:cgc/cbs.git && \
 git clone git@git.seclab.cs.ucsb.edu:cgc/farnsworth.git && \
 git clone git@git.seclab.cs.ucsb.edu:cgc/worker.git && \
 git clone git@git.seclab.cs.ucsb.edu:cgc/meister.git && \
+pip install -e fuzzer && \
+pip install -e rex && \
+pip install -e patcherex && \
 pip install -e farnsworth && \
 pip install -e worker && \
 pip install -e meister
