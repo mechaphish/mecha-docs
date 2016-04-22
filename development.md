@@ -6,6 +6,7 @@ How to run CRS locally (without Kubernetes).
 
 * angr
 * docker (`curl -fsSL https://get.docker.com/ | sh`)
+* openvpn (`sudo apt-get install openvpn`)
 
 
 ## Install
