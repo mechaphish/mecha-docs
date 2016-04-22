@@ -18,12 +18,6 @@ git clone git@git.seclab.cs.ucsb.edu:cgc/meister.git && \
 pip install -e farnsworth && \
 pip install -e worker && \
 pip install -e meister
-
-# setup db
-cd farnsworth
-cp .env.example .env
-# edit .env if needed
-./setupdb.sh
 ```
 
 
@@ -32,6 +26,12 @@ cp .env.example .env
 ```
 # run Postgres
 sudo docker run -p 127.0.0.1:5432:5432 -d postgres:9.5
+
+# setup db
+cd farnsworth
+cp .env.example .env
+# edit .env if needed
+./setupdb.sh
 
 # connecto to VPN for virtual-competition (ask Yan for VPN scripts)
 cd team6/ && sudo openvpn team6-tcp-client.ovpn
