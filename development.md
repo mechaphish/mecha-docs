@@ -27,6 +27,7 @@ pip install -e rex && \
 pip install -e patcherex && \
 pip install -e farnsworth && \
 pip install -e worker && \
+pip install -r meister/requirements.txt && \
 pip install -e meister
 ```
 
