@@ -13,4 +13,9 @@ nodes:
 
 - **Meister**: Communicates with the CGC API and coordinates the workers.
 - **Worker**: Runs various jobs based on meister commands.
-- **Farnsworth**: Knowledge base of the CRS, provided as JSON-based REST API.
+- **Postgres**: Knowledge base of the CRS
+
+## Additional components (for testing)
+
+- **virtual-competition**: simulates CGC TI API
+- **registry**: automatic update Docker images
