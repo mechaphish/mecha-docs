@@ -6,7 +6,6 @@ The Shellphish CRS requires the following software installed on the physical
 nodes:
 - Docker for running jobs, such as AFL, Driller, etc.
 - Kubernetes for scheduling Docker images
-- GlusterFS for the distributed filesystem, which is being used by PostgreSQL
 
 
 ## Components
