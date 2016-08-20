@@ -17,6 +17,7 @@ So far, there are several glaring issues that came up during the runup to the CG
 
 - There is very little documentation of the whole thing. This is something that we would love community involvement for (although it's admittedly a chicken-and-egg problem).
 - Setting Mechanical Phish up can be an ordeal. A ready-built docker would be cool.
+- There are probably lots of URLs pointing to our internal infrastructure. These will need to be changed to point to github as they're identified.
 - There are some issues we're aware of:
  * Our Kubernetes setup has problems scheduling things quickly, leading to under-utilitization of the infrastructure.
  * An accidental assert, partway through our multi-CB exploitation pipeline, completely disables Mechanical Phish's ability to exploit multi-CB challenge sets.
