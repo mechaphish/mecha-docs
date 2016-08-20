@@ -87,3 +87,10 @@ We'll get a full list together at some point.
 We have documented the process to setup a local development version [here](development.md).
 
 Scripts for setting up the full, kubernetes-powered distributed systems are [here](https://github.com/mechaphish/setup).
+
+# Support
+
+We plan to keep MechanicalPhish alive through our research and the support of the community.
+However, we are a small group of PhD students, and don't have much time to give support, as our primary task is to do research, publish papers, and graduate.
+Please understand this when creating support requests: if resolving a support question takes too much time, it will likely never be done.
+To maximize the chance of a resolution, meet us half way and try exploring the issue *with* us :-)
