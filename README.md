@@ -11,6 +11,9 @@ Unfortunately, rather than being a software development shop, we are a "mysterio
 This means that Mechanical Phish has some rough components, missing documentation, and ghosts in the machine.
 Our hope is that, going forward, we can polish and extend Mechanical Phish, as a community, to continue to push the limits of automated hacking.
 
+Keep in mind that this was never designed to be turn-key, might not install without extreme effort, and might not work without a lot of tweaking.
+Otherwise, have at it!
+
 # Issues
 
 So far, there are several glaring issues that came up during the runup to the CGC Final Event, the CFE itself, DEFCON, or our post-CGC analysis:
