@@ -1,68 +1,44 @@
 # Repositories
 
-## [Meister](https://git.seclab.cs.ucsb.edu/cgc/meister.git)
-Shellphish CRS master component
+The CRS has a *lot* of moving parts.
+This is an index of all of them, split by component.
 
-## [Worker](https://git.seclab.cs.ucsb.edu/cgc/worker.git)
-Shellphish CRS worker component
+## Meister
 
-## [Farnsworth](https://git.seclab.cs.ucsb.edu/cgc/farnsworth.git)
-Farnsworth is the knowledge base of the Shellphish CRS.
-It provides a JSON-based REST API and uses PostgreSQL as the data store.
+The CRS Meister handles task scheduling.
 
-## [Vagrant-Utils](https://git.seclab.cs.ucsb.edu/cgc/vagrant-utils.git)
-Utilities to communicate with CGC Vagrant VM
+- [Meister](https://github.com/mechaphish/meister)
 
-## [Setup](https://git.seclab.cs.ucsb.edu/cgc/setup.git)
-Setup scripts for the CGC cloud (Shellcloud)
+## Ambassador
 
-## [Ret-Encryptor](https://git.seclab.cs.ucsb.edu/cgc/ret-encryptor.git)
-FIXME
+The Ambassador talks to the CGC API to retrieve CBs, submit POVs, etc.
 
-## [Rex](https://git.seclab.cs.ucsb.edu/cgc/rex.git)
-Shellphish CRS automated exploitation component
+- [Ambassador](https://github.com/mechaphish/ambassador
 
-## [Linting](https://git.seclab.cs.ucsb.edu/cgc/linting.git)
-Setup files for running pylint
+## Scriba
 
-## [Kubernetes-test](https://git.seclab.cs.ucsb.edu/cgc/kubernetes-test.git)
-Temp repo, to be merged in *setup*
+Scriba decides what exploits and RCBs to submit.
 
-## [Fuzzer](https://git.seclab.cs.ucsb.edu/cgc/fuzzer.git)
-Fuzzer component of the Shellphish CRS
+- [Scriba](https://github.com/mechaphish/scriba
 
-## [Pcaps](https://git.seclab.cs.ucsb.edu/cgc/pcaps.git)
-Traffic dumps generated during scoring and qualification events
+## Worker
 
-## [CBs](https://git.seclab.cs.ucsb.edu/cgc/cbs.git)
-Binaries produced by both the organizers and the participants of CGC events
+The CRS worker handles running the actual tasks that are scheduled by the worker.
+This part includes a lot of repositories working together.
 
-## [Tracer](https://git.seclab.cs.ucsb.edu/cgc/tracer.git)
-Component that traces CGC binaries symbolically with concrete inputs
+- [Worker](https://github.com/mechaphish/worker) - the actual glue
+- [Rex](https://github.com/shellphish/rex) - Shellphish's automated exploitation component
+- [Patcherex](https://github.com/shellphish/patcherex) - Shellphish's atomatic patching engine.
+- [Fuzzer](https://github.com/shellphish/fuzzer) - a Python wrapper around AFL, and the fuzzer component of the Shellphish CRS.
+- [Tracer](https://github.com/angr/tracer) - Component that traces CGC binaries symbolically with concrete inputs (convenience wrapper for concolic tracing).
+- [Driller](https://github.com/shellphish/driller) - The Shellphish CRS "smart fuzzer".
+- [Shellphish-QEMU](https://github.com/angr/shellphish-qemu) - A pip wrapper around our ridiculous amounts of qemu ports.
+- [Shellphish-AFL](https://github.com/shellphish/shellphish-afl) - A pip wrapper to easily distribute AFL.
 
-## [Driller](https://git.seclab.cs.ucsb.edu/cgc/driller.git)
-The Shellphish CRS "smart fuzzer"
+## Common
 
-## [Shellphish-CRS](https://git.seclab.cs.ucsb.edu/cgc/shellphish-crs.git)
-The old CRS used for qualifications.
+There are several common components that don't fit in a single category above.
 
-## [QEmu](https://git.seclab.cs.ucsb.edu/cgc/qemu.git)
-QEMU port (check branches)
-
-## [CGC](https://git.seclab.cs.ucsb.edu/cgc/cgc.git)
-Scripts and such for the CGC
-
-## [afl-other-arch](https://git.seclab.cs.ucsb.edu/cgc/afl-other-arch.git)
-Easy other architecture support for AFL
-
-## [Driller-AFL](driller-afl.git)
-Driller's custom AFL
-
-## [AFL](https://git.seclab.cs.ucsb.edu/cgc/afl.git)
-American Fuzzy Lop http://lcamtuf.coredump.cx/afl/
-
-## [Tester](https://git.seclab.cs.ucsb.edu/cgc/tester.git)
-CGC binary tester for qualification
-
-## [CB Analyses](https://git.seclab.cs.ucsb.edu/cgc/cb_analyses.git)
-CB analyses so that we can be more informed in developing the CRS
+- [Farnsworth](https://github.com/mechaphish/farnsworth) - Farnsworth is the knowledge base of the Shellphish CRS. It provides a JSON-based REST API and uses PostgreSQL as the data store.
+- [Common-utils](https://github.com/mechaphish/common-utils) - Common utilities that didn't fit elsewhere.
+- [Setup](https://github.com/mechaphish/setup) - Setup scripts to assist in CRS deployment.
