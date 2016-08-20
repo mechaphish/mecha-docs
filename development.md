@@ -4,56 +4,63 @@ How to run CRS locally (without Kubernetes).
 
 ## Requirements
 
-* Python 2.7 with virtualenv
-* docker (`curl -fsSL https://get.docker.com/ | sh`)
-* openvpn (`sudo apt-get install openvpn`)
+* docker
+* ubuntu 16.04
+* the following packages: virtualenvwrapper python2.7-dev build-essential sudo libxml2-dev libxslt1-dev git libffi-dev cmake libreadline-dev libtool debootstrap debian-archive-keyring libglib2.0-dev libpixman-1-dev libpq-dev python-dev libc6:i386 libncurses5:i386 libstdc++6:i386 zlib1g:i386 pkg-config zlib1g-dev libtool libtool-bin wget automake autoconf coreutils bison libacl1-dev qemu-user qemu-kvm socat postgresql-client nasm binutils-multiarch llvm clang
 
 
 ## Install
 
-```
-mkvirtualenv cgc
-workon cgc
+This is a bit hacky, but it pays the bills:
 
-git clone git@git.seclab.cs.ucsb.edu:cgc/fuzzer.git && \
-git clone git@git.seclab.cs.ucsb.edu:cgc/rex.git && \
-git clone git@git.seclab.cs.ucsb.edu:cgc/patcherex.git && \
-git clone git@git.seclab.cs.ucsb.edu:cgc/cbs.git && \
-git clone git@git.seclab.cs.ucsb.edu:cgc/farnsworth.git && \
-git clone git@git.seclab.cs.ucsb.edu:cgc/worker.git && \
-git clone git@git.seclab.cs.ucsb.edu:cgc/meister.git && \
-pip install -e fuzzer && \
-pip install -e rex && \
-pip install -e patcherex && \
-pip install -e farnsworth && \
-pip install -e worker && \
-pip install -r meister/requirements.txt && \
-pip install -e meister
+```
+git clone git@github.com:angr/angr-dev
+cd angr-dev
+./setup.sh -i -w -p cgc -r git@git.seclab.cs.ucsb.edu:cgc -D \
+    		ana idalink cooldict mulpyplexer monkeyhex superstruct \
+        	capstone unicorn \
+            	archinfo vex pyvex cle claripy simuvex angr angr-management angr-doc \
+                binaries binaries-private identifier fidget angrop pwnrex driller fuzzer tracer \
+                compilerex povsim rex farnsworth patcherex colorguard top-secret \
+                common-utils network_poll_creator \
+                worker meister ambassador scriba
 ```
 
 
 ## Run
 
-```
-# run Postgres
-sudo docker run -p 127.0.0.1:5432:5432 -d postgres:9.5
+Mechanical Phish needs postgres to run.
+You can easily spawn it with docker:
 
-# setup db
+```
+sudo docker run -p 127.0.0.1:5432:5432 -d postgres:9.5
+```
+
+Now, you need to set up the DB itself:
+
+```
+workon cgc
 cd farnsworth
 cp .env.example .env
 # edit .env if needed
 ./setupdb.sh
+```
 
-# connecto to VPN for virtual-competition (ask Yan for VPN scripts)
-cd team6/ && sudo openvpn team6-tcp-client.ovpn
+Run meister:
 
-# run Meister
+```
+workon cgc
 cd meister
 cp .env.development .env
 # edit .env if needed
 meister
+```
 
-# run worker
+You'll now need to inject some challenge sets and so on, so that meister starts launching jobs (TODO: document this).
+Then, as meister creates jobs, you can run them with:
+
+```
+workon cgc
 cd worker
 cp .env.development .env
 # edit .env if needed
