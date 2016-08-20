@@ -51,13 +51,13 @@ The CRS Meister handles task scheduling.
 
 The Ambassador talks to the CGC API to retrieve CBs, submit POVs, etc.
 
-- [Ambassador](https://github.com/mechaphish/ambassador
+- [Ambassador](https://github.com/mechaphish/ambassador)
 
 ## Scriba
 
 Scriba decides what exploits and RCBs to submit.
 
-- [Scriba](https://github.com/mechaphish/scriba
+- [Scriba](https://github.com/mechaphish/scriba)
 
 ## Worker
 
