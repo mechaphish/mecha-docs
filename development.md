@@ -16,7 +16,7 @@ This is a bit hacky, but it pays the bills:
 ```
 git clone git@github.com:angr/angr-dev
 cd angr-dev
-./setup.sh -p cgc -r https://github.com/shellphish -r https://github.com/mechaphish -r https://github.com/salls -D \
+./setup.sh -e cgc -r https://github.com/shellphish -r https://github.com/mechaphish -r https://github.com/salls -D \
                 ana idalink cooldict mulpyplexer monkeyhex superstruct \
                 shellphish-afl shellphish-qemu capstone unicorn peewee \
             	archinfo vex pyvex cle claripy simuvex angr angr-management angr-doc \
