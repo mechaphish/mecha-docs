@@ -120,6 +120,18 @@ cp .env.example .env
 ambassador
 ```
 
+### Run the Submitter
+
+The component `scriba` performs patch and POV submission.
+
+```bash
+workon cgc
+cd scriba
+cp .env.example .env
+# edit .env if you need
+scriba
+```
+
 ### It's live!
 
 The CRS should now be scheduling jobs.
@@ -131,11 +143,13 @@ However, because we're not running with kubernetes, none of these will actaully 
 
 ```bash
 workon cgc
-cd worker
-cp .env.development .env
-# edit .env if needed
-JOB_ID=xxx worker
+cd manual-interaction
+./jobs.py list
+./jobs.py run <JOB ID>
 ```
 
 This should run the job.
 Each job syncronizes its own data and status into the database, so if your job produces interesting stuff, you should see more interesting jobs!
+
+To view the logs of a given job, look in `manual-interaction/workers/<JOB ID>.log`.
+Be sure to delete the `manual-interaction/workers` folder whenever you reset the database!
