@@ -73,7 +73,7 @@ This part includes a lot of repositories working together.
 
 - [Worker](https://github.com/mechaphish/worker) - the actual glue
 - [Rex](https://github.com/shellphish/rex) - Shellphish's automated exploitation component
-- [Patcherex](https://github.com/shellphish/patcherex) - Shellphish's atomatic patching engine.
+- [Patcherex](https://github.com/shellphish/patcherex) - Shellphish's automatic patching engine.
 - [Fuzzer](https://github.com/shellphish/fuzzer) - a Python wrapper around AFL, and the fuzzer component of the Shellphish CRS.
 - [Tracer](https://github.com/angr/tracer) - Component that traces CGC binaries symbolically with concrete inputs (convenience wrapper for concolic tracing).
 - [Driller](https://github.com/shellphish/driller) - The Shellphish CRS "smart fuzzer".
