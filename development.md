@@ -18,7 +18,7 @@ git clone git@github.com:angr/angr-dev
 cd angr-dev
 ./setup.sh -p cgc -r git@github.com:mechaphish -r git@github.com:shellphish -D \
                 ana idalink cooldict mulpyplexer monkeyhex superstruct \
-                shellphish-afl shellphish-qemu capstone unicorn \
+                shellphish-afl shellphish-qemu capstone unicorn peewee \
             	archinfo vex pyvex cle claripy simuvex angr angr-management angr-doc \
                 binaries identifier fidget angrop driller fuzzer tracer \
                 compilerex povsim rex farnsworth patcherex colorguard \
