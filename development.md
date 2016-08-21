@@ -16,16 +16,24 @@ This is a bit hacky, but it pays the bills:
 ```
 git clone git@github.com:angr/angr-dev
 cd angr-dev
-./setup.sh -i -w -p cgc -r git@git.seclab.cs.ucsb.edu:cgc -D \
-    		ana idalink cooldict mulpyplexer monkeyhex superstruct \
-        	capstone unicorn \
+./setup.sh -p cgc -r git@github.com:mechaphish -r git@github.com:shellphish -D \
+                ana idalink cooldict mulpyplexer monkeyhex superstruct \
+                shellphish-afl shellphish-qemu capstone unicorn \
             	archinfo vex pyvex cle claripy simuvex angr angr-management angr-doc \
-                binaries binaries-private identifier fidget angrop pwnrex driller fuzzer tracer \
-                compilerex povsim rex farnsworth patcherex colorguard top-secret \
-                common-utils network_poll_creator \
+                binaries identifier fidget angrop driller fuzzer tracer \
+                compilerex povsim rex farnsworth patcherex colorguard \
+                common-utils network_poll_creator patch_performance \
                 worker meister ambassador scriba
 ```
 
+Annotated:
+- Use the **setup.sh** from the angr-dev repository to perform installation
+- Create a **virtual environment** with the **pypy** interpreter, named "cgc"
+- Use the **mechaphish** and **shellphish** github organizations for data sources in addition to the hardcoded defaults
+- Specifies all python packages to install explicitly
+
+Note that this will take a *VERY LONG TIME*, since installing shellphish-afl and shellphish-qemu involves building qemu about 40 times.
+There is a binary distribution that should take significantly shorter, but there are distribution issues at present.
 
 ## Run
 
@@ -70,16 +78,17 @@ JOB_ID=xxx worker
 
 ## Run Virtual Competition
 
-You can use the virtual competition running on CGC node `172.16.7.19:8888`.
-If you want to run virtual competition locally:
+To run a virtual competition that serves challenge sets locally:
 
 1. install [VirtualBox](https://www.virtualbox.org/wiki/Downloads) and [Vagrant](https://www.vagrantup.com/downloads.html)
 2. run
 
    ```
-   git clone git@git.seclab.cs.ucsb.edu:cgc/virtual-competition.git && \
-   git clone git@git.seclab.cs.ucsb.edu:cgc/tester.git && \
-   cd virtual-competition && \
-   vagrant up && \
-   vagrant ssh ti -c "/vagrant/bin/launch start"
+   git clone git@github.com:mechaphish/virtual-competition.git
+   cd virtual-competition
+   # put any challenge sets you want fielded in shared/cgc-challenges
+   # the format is a folder for each challenge set, which contains a `bin` folder
+   # which contains all the binaries for the challenge set
+   vagrant up crs
+   bin/launch start
    ```

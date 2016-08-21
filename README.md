@@ -39,7 +39,14 @@ We have fixes our fixes in the following forks, but we need to upstream them:
 # Components
 
 The CRS has a *lot* of moving parts.
-This is an index of all of them, split by component.
+They have been distributed throughout several different github namespaces:
+
+- https://github.com/angr - Core angr components and interesting static analyses
+- https://github.com/shellphish - Cool hacking tools, generally anything that's useful outside the CGC
+- https://github.com/mechaphish - CRS bookkeping or utility components
+- Additional repositories authoried by a single person may be under their github username namespace
+
+This is an index of all of the repositories, split by component.
 
 ## Meister
 
@@ -93,7 +100,7 @@ Scripts for setting up the full, kubernetes-powered distributed systems are [her
 
 # Support
 
-We plan to keep MechanicalPhish alive through our research and the support of the community.
+We plan to keep Mechanical Phish alive through our research and the support of the community.
 However, we are a small group of PhD students, and don't have much time to give support, as our primary task is to do research, publish papers, and graduate.
 Please understand this when creating support requests: if resolving a support question takes too much time, it will likely never be done.
 To maximize the chance of a resolution, meet us half way and try exploring the issue *with* us :-)
